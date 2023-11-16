@@ -11,19 +11,19 @@ services:
     volumes:
     - ./storage/logs:/var/www/html/storage/logs
     depends_on:
-    - mariadb
+    - snipedb
     - redis
     env_file:
-    - .env.docker
+    - stack.env
     networks:
     - snipeit-backend
 
-  mariadb:
+  snipedb:
     image: mariadb:10.6.4-focal
     volumes:
     - db:/var/lib/mysql
     env_file:
-    - .env.docker
+    - stack.env
     networks:
     - snipeit-backend
     ports:
