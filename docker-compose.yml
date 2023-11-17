@@ -11,7 +11,7 @@ services:
     volumes:
     - ./storage/logs:/var/www/html/storage/logs
     depends_on:
-    - snipedb
+    - snipeit-snipedb-1
     - redis
     env_file:
     - stack.env
